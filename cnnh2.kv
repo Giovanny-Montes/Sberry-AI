@@ -1,0 +1,72 @@
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Image:
+            source: 'colpos.png' 
+        Image:
+            source: 'Logo.png'
+            size: 400, 400
+        BoxLayout:
+            orientation: 'horizontal'
+            Button:
+                size_hint:1, 0.2
+                text: 'Entrar'
+                on_press:root.go_to_screen()
+
+
+<opciones>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Seleccione una de las opciones:'
+            font_size: 50
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 60, 60
+            size_hint:1,0.25
+            Button:
+                size_hint:1, 0.15
+                text: 'Imagen desde Archivo'
+                #font_size: 50
+                on_press:root.go_to_screen1()                
+            Button:
+                size_hint:1, 0.15
+                text: 'Imagen desde Camara'
+                #font_size: 50
+                on_press:root.go_to_screen2()     
+
+
+<Camara>:
+    BoxLayout:
+        orientation: 'vertical'
+        Camera:
+            id: camera
+            play: False
+            fit_mode:"cover" #"contain" #sino "fill"
+            canvas.before:
+                PushMatrix
+                Rotate:
+                    angle: -90
+                    origin: self.center
+            canvas.after:
+                PopMatrix
+        ToggleButton:
+            size_hint:1, 0.1
+            text: 'Activar Cámara'
+            on_press: camera.play = not camera.play
+        BoxLayout:
+            size_hint:1, 0.2
+            #spacing: 15  # Espacio entre los botones
+            #padding: 10  # Espacio alrededor del contenido
+
+            Button:
+                size_hint:0.45, 1
+                text: 'Foto'
+                #background_normal: "captura-de-pantalla.png"
+                on_press: root.capture_image()
+                #height: '48dp'
+            Button:
+                size_hint:0.45, 1
+                text: 'Listo'
+                #background_normal: "cheque.png"
+                on_press: root.go_to_screen()
