@@ -23,5 +23,6 @@ Las imágenes para el entrenamiento del modelo se obtuvieron de los trabajos rea
 - Shreya M. (2023). Fruits Dataset (Images). Kaggle. https://doi.org/10.34740/KAGGLE/DSV/5514079 (Septiembre 2023).
 - Sultana N., Jahan M. and Uddin M. S. (2022). An extensive dataset for successful recognition of fresh and rotten fruits. *Data in Brief*. 44:108552. https://doi.org/10.17632/bdd69gyhv8.1
 https://doi.org/10.48550/arXiv.1511.08060
+
 Apk para la identificación de problemas fitosanitarios de fresa, basado en el modelo CNN-M.
 El archivo model.tflite o apk deberá solicitarse por escrito a: "Giovanny M. Rodriguez" <epsiloncob@gmail.com>
