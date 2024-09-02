@@ -1,0 +1,4 @@
+En esta versión de alcanzó el 99.3% de ACC
+Se utilizó la función sigmoide con 14 mas o menos ciclos de entrenamiento
+No identifica correctamente clases desconocidas.
+
