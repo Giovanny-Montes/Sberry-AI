@@ -25,4 +25,4 @@ Las imágenes para el entrenamiento del modelo se obtuvieron de los trabajos rea
 https://doi.org/10.48550/arXiv.1511.08060
 
 
-El archivo model.tflite o apk deberá solicitarse por escrito a: "Giovanny M.R." al correo: <epsiloncob@gmail.com>
+Contacto: "Giovanny M.R." al correo: <epsiloncob@gmail.com>
