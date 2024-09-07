@@ -209,7 +209,7 @@ android.service_class_name = org.kivy.android.PythonService
 
 # (list) Gradle dependencies to add
 #android.gradle_dependencies = org.tensorflow:tensorflow-lite:1.12.0,org.tensorflow:tensorflow-lite-support:0.0.0-nightly-SNAPSHOT
-android.gradle_dependencies = org.tensorflow:tensorflow-lite:2.9.0,org.tensorflow:tensorflow-lite-support:0.0.0-nightly
+android.gradle_dependencies = org.tensorflow:tensorflow-lite:2.14.0,org.tensorflow:tensorflow-lite-support:0.4.0
 
 # (bool) Enable AndroidX support. Enable when 'android.gradle_dependencies'
 # contains an 'androidx' package, or any package from Kotlin source.
