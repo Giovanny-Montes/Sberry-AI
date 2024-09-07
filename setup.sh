@@ -26,7 +26,8 @@ source app/bin/activate
 echo "Creando el archivo requirements.txt..."
 cat <<EOL > requirements.txt
 kivy==2.2.1
-opencv-python==4.8.1
+#requiere la version de openCV==4.8.1 pero el sistema no la reconoce
+opencv-python
 numpy==1.24.3
 tensorflow==2.14.0
 keras==2.14.0
