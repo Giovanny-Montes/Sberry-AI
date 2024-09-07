@@ -12,7 +12,7 @@ El modelo fue entrenado para detectar:
 - Quemadura de la hoja (*Diplocarpon earlianum*) 
 - Frutos sanos 
 - Hojas sanas
-- Otros
+
 
 La aplicación está basada en el framework de Kivy y Buildozer:
 
@@ -27,7 +27,24 @@ https://doi.org/10.48550/arXiv.1511.08060
 
 Contacto: "Giovanny M.R." al correo: <epsiloncob@gmail.com>
 
-para instalar las dependenias despues de clonar el proyecto
-dentro de la carpeta Sberry-AI:
+En ubuntu, el proceso automático para crear la aplicación es la siguiente:
+En la terminal ejecuta los siguientes comandos:
+sudo apt update
+sudo apt install git
+
+#clona el repositorio con:
+git clone https://github.com/Giovanny-Montes/Sberry-AI.git
+
+#Entra a la carpeta del proyecto
+cd Sberry-AI
+
+#Dentro damos permisos de ejecución al archivo setup.sh
 chmod +x setup.sh
+
+#Ejecutamos el instalador automatico, creará un entorno virtual de python llamado app.
 ./setup.sh
+#Este archivo ejecuta todos los comandos necesarios para instalar dependencias y crea la aplicación.(Pueden existir errores que dependen de los permisos del usuario) 
+#Tiempo estimado de 45min
+
+
+
