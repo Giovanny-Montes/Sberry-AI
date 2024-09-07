@@ -29,21 +29,29 @@ Contacto: "Giovanny M.R." al correo: <epsiloncob@gmail.com>
 
 En ubuntu, el proceso automático para crear la aplicación es la siguiente:
 En la terminal ejecuta los siguientes comandos:
+
 sudo apt update
+
 sudo apt install git
 
 #clona el repositorio con:
+
 git clone https://github.com/Giovanny-Montes/Sberry-AI.git
 
 #Entra a la carpeta del proyecto
+
 cd Sberry-AI
 
 #Dentro damos permisos de ejecución al archivo setup.sh
+
 chmod +x setup.sh
 
 #Ejecutamos el instalador automatico, creará un entorno virtual de python llamado app.
+
 ./setup.sh
+
 #Este archivo ejecuta todos los comandos necesarios para instalar dependencias y crea la aplicación.(Pueden existir errores que dependen de los permisos del usuario) 
+
 #Tiempo estimado de 45min
 
 
