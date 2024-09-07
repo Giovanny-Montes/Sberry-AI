@@ -22,13 +22,11 @@ python3 -m virtualenv app
 echo "Activando el entorno virtual..."
 source app/bin/activate
 
-
-# requiere la version de openCV==4.8.1 pero el sistema no la reconoce
+# Crear el archivo requirements.txt con las dependencias
 echo "Creando el archivo requirements.txt..."
 cat <<EOL > requirements.txt
 kivy==2.2.1
-
-opencv-python
+opencv-python==4.8.1
 numpy==1.24.3
 tensorflow==2.14.0
 keras==2.14.0
@@ -39,7 +37,23 @@ EOL
 echo "Instalando dependencias de Python en el entorno virtual..."
 pip install -r requirements.txt
 
-echo "Proceso completado. El entorno virtual 'app' está configurado y las dependencias están instaladas."
+# Clonar el repositorio de Buildozer
+echo "Clonando el repositorio de Buildozer..."
+git clone https://github.com/kivy/buildozer
 
-# Mantener el entorno virtual activado después del script
-exec "$SHELL"
+# Navegar al directorio buildozer
+cd buildozer
+
+# Construir e instalar Buildozer
+echo "Instalando Buildozer..."
+python setup.py build
+pip install -e .
+
+# Volver al directorio del proyecto
+cd ..
+
+# Compilar la aplicación para Android
+echo "Compilando la aplicación para Android en modo depuración..."
+buildozer -v android debug
+
+echo "Proceso completado."
