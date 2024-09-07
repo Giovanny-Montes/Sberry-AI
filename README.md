@@ -26,3 +26,8 @@ https://doi.org/10.48550/arXiv.1511.08060
 
 
 Contacto: "Giovanny M.R." al correo: <epsiloncob@gmail.com>
+
+para instalar las dependenias despues de clonar el proyecto
+dentro de la carpeta Sberry-AI:
+chmod +x setup.sh
+./setup.sh
