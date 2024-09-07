@@ -2,6 +2,7 @@
 
 # Actualizar el sistema
 echo "Actualizando el sistema..."
+sudo -i
 sudo apt update
 
 # Instalar las dependencias del sistema operativo
