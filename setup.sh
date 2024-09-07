@@ -22,11 +22,12 @@ python3 -m virtualenv app
 echo "Activando el entorno virtual..."
 source app/bin/activate
 
-# Crear el archivo requirements.txt con las dependencias
+
+# requiere la version de openCV==4.8.1 pero el sistema no la reconoce
 echo "Creando el archivo requirements.txt..."
 cat <<EOL > requirements.txt
 kivy==2.2.1
-#requiere la version de openCV==4.8.1 pero el sistema no la reconoce
+
 opencv-python
 numpy==1.24.3
 tensorflow==2.14.0
