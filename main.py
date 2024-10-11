@@ -79,14 +79,33 @@ class Resultados(Screen):
         app = App.get_running_app()
         model=app.mod
         img = cv2.imread(image_path)
-        img_arr = np.array(cv2.resize(img,(224, 224)), np.float32)
+        if img is None:
+                    raise ValueError("No se pudo cargar la imagen. Verifica la ruta.") 
+        # Obtener las dimensiones originales de la imagen
+        h, w, _ = img.shape
+        # Determinar la escala proporcional para reducir el lado más pequeño a 224
+        if w < h:
+            scale_factor = 224 / w
+        else:
+            scale_factor = 224 / h       
+        # Redimensionar la imagen manteniendo la proporción
+        new_w = int(w * scale_factor)
+        new_h = int(h * scale_factor)
+        resized_img = cv2.resize(img, (new_w, new_h))
+        # Recortar la imagen al centro para que sea de 224x224
+        start_x = (new_w - 224) // 2
+        start_y = (new_h - 224) // 2
+        crop_img = resized_img[start_y:start_y+224, start_x:start_x+224]  
+        # Convertir la imagen a un array de numpy con formato float32
+        img_arr = np.array(crop_img, np.float32)
+        # Asegurarse de que la imagen tiene solo los 3 canales (descartar alfa si es necesario)
         img_arr = img_arr[:, :, :3]
+        # Expandir las dimensiones para que sea compatible con el modelo (opcional si estás usando un modelo de red neuronal)
         img_arr = np.expand_dims(img_arr, axis=0)
         probabilidades=model.pred(img_arr)[0]
         dic_clases = dict(enumerate(lista_clases))
 
         # Primer bloque: Mostrar imagen
-
         image_block = BoxLayout(orientation='vertical')
         pre = Image(source=image_path,fit_mode="fill")#cambio aquí 
         image_block.add_widget(pre)
