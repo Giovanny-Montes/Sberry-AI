@@ -100,14 +100,14 @@ class Resultados(Screen):
         img_arr = np.array(crop_img, np.float32)
         # Asegurarse de que la imagen tiene solo los 3 canales (descartar alfa si es necesario)
         img_arr = img_arr[:, :, :3]
-        # Expandir las dimensiones para que sea compatible con el modelo (opcional si estás usando un modelo de red neuronal)
+        # Expandir las dimensiones para que sea compatible con el modelo 
         img_arr = np.expand_dims(img_arr, axis=0)
         probabilidades=model.pred(img_arr)[0]
         dic_clases = dict(enumerate(lista_clases))
 
         # Primer bloque: Mostrar imagen
         image_block = BoxLayout(orientation='vertical')
-        pre = Image(source=image_path,fit_mode="fill")#cambio aquí 
+        pre = Image(source=image_path,fit_mode="fill")
         image_block.add_widget(pre)
         self.layout.add_widget(image_block)
 
